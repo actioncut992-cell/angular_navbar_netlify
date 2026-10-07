@@ -1,8 +1,324 @@
+/* =========================
+   NAVBAR
+========================= */
+
 .spacer {
   flex: 1;
 }
 
 .logo {
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  min-height: calc(100vh - 64px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      #3f51b5 0%,
+      #171b3a 35%,
+      #090b18 75%,
+      #05060c 100%
+    );
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+/* Decorative glowing circle */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: rgba(100, 130, 255, 0.15);
+
+  filter: blur(60px);
+
+  animation: pulse 4s ease-in-out infinite;
+}
+
+
+/* Hero content */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+
+  animation: fadeUp 1.2s ease-out;
+}
+
+
+/* Small welcome text */
+
+.welcome {
+  margin: 0 0 15px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  letter-spacing: 6px;
+
+  color: #b9c2ff;
+
+  animation: fadeIn 1s ease-out;
+}
+
+
+/* Main title */
+
+h1 {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: clamp(60px, 10vw, 130px);
+
+  line-height: 0.95;
+
+  font-weight: 900;
+
+  letter-spacing: -4px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  animation: titleFloat 4s ease-in-out infinite;
+}
+
+
+/* Gradient text */
+
+h1 span {
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #b9c7ff,
+    #ffffff,
+    #8ea2ff,
+    #ffffff
+  );
+
+  background-size: 300% auto;
+
+  color: transparent;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 5s linear infinite;
+}
+
+
+/* Second line slightly different */
+
+h1 span:nth-child(2) {
+  font-size: 0.85em;
+
+  text-shadow:
+    0 0 10px rgba(130, 150, 255, 0.5),
+    0 0 30px rgba(80, 100, 255, 0.3);
+}
+
+
+/* Subtitle */
+
+.subtitle {
+  margin-top: 30px;
+
+  font-size: 18px;
+
+  letter-spacing: 5px;
+
+  color: #d8dcff;
+
+  opacity: 0;
+
+  animation: subtitleAppear 1s ease-out 0.8s forwards;
+}
+
+
+/* Button */
+
+.explore-btn {
+  margin-top: 35px;
+
+  padding: 14px 30px;
+
+  font-size: 16px;
+
+  border-radius: 30px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.explore-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+
+/* Hero entrance */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Welcome fade */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    letter-spacing: 15px;
+  }
+
+  to {
+    opacity: 1;
+    letter-spacing: 6px;
+  }
+
+}
+
+
+/* Floating title */
+
+@keyframes titleFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* Moving gradient */
+
+@keyframes gradientMove {
+
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+
+}
+
+
+/* Subtitle entrance */
+
+@keyframes subtitleAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* Background glow */
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: calc(100vh - 56px);
+  }
+
+  h1 {
+    font-size: 65px;
+    letter-spacing: -2px;
+  }
+
+  .welcome {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
 }
