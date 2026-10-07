@@ -1,94 +1,88 @@
-<!-- <mat-toolbar color="primary">
+<!-- Background Video -->
+<video
+  #backgroundVideo
+  class="background-video"
+  autoplay
+  muted
+  loop
+  playsinline>
 
-  <span class="logo">
-    MyApp
-  </span>
+  <source
+    src="videos/aparna-background.mp4"
+    type="video/mp4">
 
-  <span class="spacer"></span>
-
-  <button mat-button>
-    Home
-  </button>
-
-  <button mat-button>
-    About
-  </button>
-
-  <button mat-button>
-    Services
-  </button>
-
-  <button mat-button>
-    Contact
-  </button>
-
-  <button mat-icon-button>
-    <mat-icon>account_circle</mat-icon>
-  </button>
-
-</mat-toolbar> -->
+</video>
 
 
-
-<!-- Navigation Bar -->
-<mat-toolbar color="primary">
-
-  <span class="logo">
-    MyApp
-  </span>
-
-  <span class="spacer"></span>
-
-  <button mat-button>
-    Home
-  </button>
-
-  <button mat-button>
-    About
-  </button>
-
-  <button mat-button>
-    Services
-  </button>
-
-  <button mat-button>
-    Contact
-  </button>
-
-  <button mat-icon-button>
-    <mat-icon>account_circle</mat-icon>
-  </button>
-
-</mat-toolbar>
+<!-- Dark overlay -->
+<div class="video-overlay"></div>
 
 
-<!-- Hero Section -->
-<section class="hero">
+<!-- Page Content -->
+<div class="page-content">
 
-  <div class="hero-content">
+  <!-- Navigation Bar -->
+  <mat-toolbar color="primary">
 
-    <p class="welcome">
-      WELCOME TO
-    </p>
+    <span class="logo">
+      Aparna's Website 😊
+    </span>
 
-    <h1>
-      <span>Aneeta's</span>
-      <span>Website</span>
-    </h1>
+    <span class="spacer"></span>
 
-    <p class="subtitle">
-      Discover • Explore • Connect
-    </p>
-
-    <button
-      mat-raised-button
-      color="primary"
-      class="explore-btn">
-
-      Explore More
-
+    <button mat-button>
+      Home
     </button>
 
-  </div>
+    <button mat-button>
+      About
+    </button>
 
-</section>
+    <button mat-button>
+      Services
+    </button>
+
+    <button mat-button>
+      Contact
+    </button>
+
+    <button mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+
+  </mat-toolbar>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <p class="welcome">
+        WELCOME TO
+      </p>
+
+      <h1>
+        <span>Aparna's</span>
+        <span>Website 😊</span>
+      </h1>
+
+      <p class="subtitle">
+        Discover • Explore • Connect
+      </p>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="explore-btn"
+        (click)="playBackgroundVideo()">
+
+        Explore More
+
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
